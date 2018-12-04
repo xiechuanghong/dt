@@ -1,0 +1,32 @@
+<view class='aaa {{asd}}' bindtap='onTest'>12345</view>
+<view class="section">
+  <view class="section__title">省市区选择器</view>
+  <picker mode="region" bindchange="bindRegionChange" value="{{region}}" custom-item="{{customItem}}">
+    <view class="picker">
+      当前选择：{{region[0]}}，{{region[1]}}，{{region[2]}}
+    </view>
+  </picker>
+</view>
+<view class='test'>
+
+  <view class='item' wx:for="{{testArr}}" wx:key="">{{item.num}}</view>
+</view>
+
+
+<view>1 显示完后再显示</view>
+
+<view class="example">
+
+
+  <view class="marquee_box">
+
+
+    <view class="marquee_text" style="{{orientation}}:{{marqueeDistance}}px;font-size: {{size}}px;">
+
+      {{text}}
+
+    </view>
+
+  </view>
+
+</view>

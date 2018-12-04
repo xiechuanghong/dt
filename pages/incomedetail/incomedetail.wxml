@@ -1,0 +1,40 @@
+<view class='cont'>
+  <view class='tab-ele'>
+    <view data-id="0" class='tab-ele-item {{currentId == 0 ? "active" : ""}}' bindtap='onTabSwitch'>全部</view>
+    <view data-id="1" class='tab-ele-item {{currentId == 1 ? "active" : ""}}' bindtap='onTabSwitch'>收入</view>
+    <view data-id="2" class='tab-ele-item {{currentId == 2 ? "active" : ""}}' bindtap='onTabSwitch'>支出</view>
+  </view>
+  <view class='tab-content'>
+    <block wx:if="{{incomeData.Page.PageCount > 0}}">
+      <view class='item' wx:for="{{incomeData.Data}}" wx:key="">
+        <image class='left' src='{{item.Image}}'></image>
+        <view class='right'>
+          <view class='right-box'>
+            <view class='user-info'>
+              <text class='name'>{{item.Name}}</text>
+              <text class='VIP'>{{item.Content}}</text>
+            </view>
+            <view class='income-num'>
+              <text wx:if="{{item.Amount >= 0 }}" class='col-true'>+{{item.Amount}}</text>
+              <text wx:if="{{item.Amount < 0}}" class='col-false'>{{item.Amount}}</text>
+            </view>
+          </view>
+          <view class='right-box'>
+            <view class='time'>{{item.DateTime}}</view>
+            <view class='process-state'>{{item.Remark}}</view>
+          </view>
+        </view>
+      </view>
+      <!-- 没有更多了 -->
+      <view wx:if="{{!incomeData.Page.HasNextPage}}" class='period'>
+        <image mode='widthFix' src='/img/img_bottom_nomorenews.png'></image>
+      </view>
+    </block>
+
+    <block wx:if="{{incomeData.Page.PageCount <= 0}}">
+      <view class='' style='text-align:center;padding-top:160rpx;'>
+        <image mode='widthFix' class='not-data' src='/img/img_placeholder_nodata.png'></image>
+      </view>
+    </block>
+  </view>
+</view>

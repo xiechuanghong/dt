@@ -1,0 +1,10 @@
+<view class="cont">
+
+  <image mode='widthFix' src='/img/img_income_vipdetail_01.png'></image>
+  <image mode='widthFix' src='/img/img_income_vipdetail_02.png'></image>
+  <image mode='widthFix' src='/img/img_income_vipdetail_03.png'></image>
+  <!-- <image mode='widthFix' src='/img/img_income_vipdetail_04.png'></image> -->
+  <image mode='widthFix' src='/img/img_income_vipdetail_05.png'></image>
+  <image class='fixed' mode='widthFix' src='/img/img_income_vipdetail_06.png'></image>
+
+</view>

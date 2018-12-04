@@ -1,0 +1,9 @@
+<view class='cont'>
+  <image class='log' src='/img/img_default_title.png'></image>
+  <view class='getuser' wx:if="{{isShow}}">
+    <button plain='true' wx:if="{{canIUse}}" open-type="getUserInfo" bindgetuserinfo="bindGetUserInfo">
+      <image mode='widthFix' src='/img/img_default_login.png'></image>
+    </button>
+    <view wx:else>请升级微信版本</view>
+  </view>
+</view>

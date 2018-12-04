@@ -1,0 +1,305 @@
+page {
+  /* background-image: linear-gradient(0deg, transparent 24%, rgba(75, 214, 255, 0.15) 25%, rgba(75, 214, 255, 0.15) 26%, transparent 27%, transparent 74%, rgba(75, 214, 255, 0.15) 75%, rgba(75, 214, 255, 0.15) 76%, transparent 77%, transparent),
+                      linear-gradient(90deg, transparent 24%, rgba(75, 214, 255, 0.15) 25%, rgba(75, 214, 255, 0.15) 26%, transparent 27%, transparent 74%, rgba(75, 214, 255, 0.15) 75%, rgba(75, 214, 255, 0.15) 76%, transparent 77%, transparent);
+  background-size: 76rpx 76rpx;
+  background-position: 12rpx 8rpx;
+  background-color: #111; */
+}
+button {
+  background: transparent;
+}
+
+/* 雷达圈样式 */
+
+.cont-radar {
+  background-image: linear-gradient(0deg, transparent 24%, rgba(75, 214, 255, 0.15) 25%, rgba(75, 214, 255, 0.15) 26%, transparent 27%, transparent 74%, rgba(75, 214, 255, 0.15) 75%, rgba(75, 214, 255, 0.15) 76%, transparent 77%, transparent),
+                      linear-gradient(90deg, transparent 24%, rgba(75, 214, 255, 0.15) 25%, rgba(75, 214, 255, 0.15) 26%, transparent 27%, transparent 74%, rgba(75, 214, 255, 0.15) 75%, rgba(75, 214, 255, 0.15) 76%, transparent 77%, transparent);
+  background-size: 76rpx 76rpx;
+  background-position: 12rpx 8rpx;
+  background-color: #111;
+  width: 100%;
+  height: 100%;
+  position: relative;
+  padding: 0;
+  margin: 0;
+}
+
+.online-sum {
+  text-align: center;
+  color: #fff;
+  padding-top: 40rpx;
+  padding-bottom: 64rpx;
+}
+
+.online-sum .sum {
+  margin-left: 16rpx;
+  color: #f8ca1c;
+}
+
+.radar-box {
+  display: flex;
+  justify-content: center;
+}
+
+.radar {
+  background: -webkit-radial-gradient(center, rgba(75, 214, 255, 0.3) 0%, rgba(75, 214, 255, 0) 75%),
+                -webkit-repeating-radial-gradient(rgba(75, 214, 255, 0) 5.8%, rgba(75, 214, 255, 0) 18%, #4bd6ff 18.6%, rgba(75, 214, 255, 0) 18.9%),
+                -webkit-linear-gradient(90deg, rgba(75, 214, 255, 0) 49.5%, #4bd6ff 50%, #4bd6ff 50%, rgba(75, 214, 255, 0) 50.2%),
+                -webkit-linear-gradient(0deg, rgba(75, 214, 255, 0) 49.5%, #4bd6ff 50%, #4bd6ff 50%, rgba(75, 214, 255, 0) 50.2%);
+  background: radial-gradient(center, rgba(75, 214, 255, 0.3) 0%, rgba(75, 214, 255, 0) 75%),
+                repeating-radial-gradient(rgba(75, 214, 255, 0) 5.8%, rgba(75, 214, 255, 0) 18%, #4bd6ff 18.6%, rgba(75, 214, 255, 0) 18.9%),
+                linear-gradient(90deg, rgba(75, 214, 255, 0) 49.5%, #4bd6ff 50%, #4bd6ff 50%, rgba(75, 214, 255, 0) 50.2%),
+                linear-gradient(0deg, rgba(75, 214, 255, 0) 49.5%, #4bd6ff 50%, #4bd6ff 50%, rgba(75, 214, 255, 0) 50.2%);
+  width: 686rpx;
+  height: 686rpx;
+  position: relative;
+  text-align: center;
+  border-radius: 50%;
+  border: 4rpx solid #4bd6ff;
+  /* overflow: hidden; */
+}
+
+/* .radar:before {
+  content: ' ';
+  display: block;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  animation: blips 5s infinite;
+  animation-timing-function: linear;
+  animation-delay: 1.4s;
+} */
+
+.radar:after {
+  content: ' ';
+  display: block;
+  background-image: linear-gradient(44deg, rgba(75, 214, 255, 0) 50%, #4bd6ff 100%);
+  width: 50%;
+  height: 50%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  animation: radar-beam 5s infinite;
+  animation-timing-function: linear;
+  transform-origin: bottom right;
+  border-radius: 100% 0 0 0;
+}
+
+@keyframes radar-beam {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes blips {
+  14% {
+    background: radial-gradient(2vmin circle at 75% 70%, #fff 10%, #4bd6ff 30%, rgba(255, 255, 255, 0) 100%);
+  }
+
+  14.0002% {
+    background: radial-gradient(2vmin circle at 75% 70%, #fff 10%, #4bd6ff 30%, rgba(255, 255, 255, 0) 100%),
+                    radial-gradient(2vmin circle at 63% 72%, #fff 10%, #4bd6ff 30%, rgba(255, 255, 255, 0) 100%);
+  }
+
+  25% {
+    background: radial-gradient(2vmin circle at 75% 70%, #fff 10%, #4bd6ff 30%, rgba(255, 255, 255, 0) 100%),
+                    radial-gradient(2vmin circle at 63% 72%, #fff 10%, #4bd6ff 30%, rgba(255, 255, 255, 0) 100%),
+                    radial-gradient(2vmin circle at 56% 86%, #fff 10%, #4bd6ff 30%, rgba(255, 255, 255, 0) 100%);
+  }
+
+  26% {
+    background: radial-gradient(2vmin circle at 75% 70%, #fff 10%, #4bd6ff 30%, rgba(255, 255, 255, 0) 100%),
+                    radial-gradient(2vmin circle at 63% 72%, #fff 10%, #4bd6ff 30%, rgba(255, 255, 255, 0) 100%),
+                    radial-gradient(2vmin circle at 56% 86%, #fff 10%, #4bd6ff 30%, rgba(255, 255, 255, 0) 100%);
+    opacity: 1;
+  }
+
+  100% {
+    background: radial-gradient(2vmin circle at 75% 70%, #fff 10%, #4bd6ff 30%, rgba(255, 255, 255, 0) 100%),
+                    radial-gradient(2vmin circle at 63% 72%, #fff 10%, #4bd6ff 30%, rgba(255, 255, 255, 0) 100%),
+                    radial-gradient(2vmin circle at 56% 86%, #fff 10%, #4bd6ff 30%, rgba(255, 255, 255, 0) 100%);
+    opacity: 0;
+  }
+}
+
+.btm-title {
+  position: absolute;
+  bottom: 64rpx;
+  background: rgba(255, 255, 255, 0.30);
+  display: flex;
+  border-radius: 26rpx;
+  color: #fff;
+  padding-right: 8rpx;
+  left: 16rpx;
+}
+
+.btm-title image {
+  width: 48rpx;
+  height: 48rpx;
+}
+
+.btm-title .text {
+  margin-left: 16rpx;
+}
+
+.btm-title .sum {
+  color: #f8ca1c;
+}
+
+.nav-icon {
+  position: fixed;
+  display: flex;
+  flex-direction: column;
+  bottom: 48rpx;
+  right: 32rpx;
+}
+
+.nav-icon image {
+  width: 80rpx;
+  height: 80rpx;
+}
+
+/* 雷达列表样式 */
+
+.cont-list {
+  padding: 0 16rpx;
+  padding-top: 32rpx;
+}
+
+.cont-list .item {
+  position: relative;
+  margin-bottom: 32rpx;
+  width: 100%;
+  height: 208rpx;
+  background: #fff;
+  box-shadow: 0 2rpx 16rpx 0 rgba(0, 0, 0, 0.12);
+  border-radius: 8rpx;
+  padding: 16rpx;
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
+}
+
+.cont-list .item .user-box {
+  display: flex;
+  align-items: center;
+}
+
+.cont-list .item .user-img-box {
+  position: relative;
+}
+
+.cont-list .item .avatar {
+  width: 144rpx;
+  height: 144rpx;
+  border-radius: 50%;
+}
+
+.cont-list .item .grade {
+  width: 44rpx;
+  height: 44rpx;
+  position: absolute;
+  right: 0;
+  bottom: 0;
+}
+
+.cont-list .item .user-info {
+  margin-left: 16rpx;
+}
+
+.cont-list .item .user-name {
+  font-family: PingFangSC-Medium;
+  font-size: 20px;
+  color: #2c364c;
+}
+
+.cont-list .item .user-position {
+  font-size: 14px;
+  color: #2c364c;
+}
+
+.sex-or-address {
+  position: absolute;
+  right: 16rpx;
+  top: 16rpx;
+  font-size: 12px;
+  color: #fff;
+  display: flex;
+}
+
+.sex-or-address .address {
+  background: #868ba4;
+  padding: 4rpx 16rpx;
+  border-radius: 18rpx;
+}
+
+.sex-or-address .sex {
+  background: #f77f7f;
+  border-radius: 18rpx;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0 16rpx;
+  margin-right: 16rpx;
+}
+
+.sex-or-address .sex.active {
+  background: #59A8FF;
+}
+
+.sex-or-address .sex image {
+  width: 20rpx;
+  height: 20rpx;
+  margin-right: 8rpx;
+}
+
+.industry {
+  position: absolute;
+  bottom: 16rpx;
+  right: 16rpx;
+  font-family: PingFangSC-Regular;
+  font-size: 12px;
+  color: #8b9199;
+}
+
+/* 雷达圈显示样式 */
+
+.radar-item {
+  color: #fff;
+  position: absolute;
+  z-index: 99;
+  animation: 2s changeColor;
+  transform: translateX(-50%) translateY(-50%);
+}
+
+.radar-item image {
+  width: 96rpx;
+  height: 96rpx;
+  border-radius: 50%;
+  border: 1px solid #ccc;
+  background: #000;
+}
+
+@keyframes changeColor {
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
+.test-position {
+  position: absolute;
+  width: 2px;
+  height: 2px;
+  /* background: red; */
+  border-radius: 50%;
+  transform: translate(-100%, -100%);
+}

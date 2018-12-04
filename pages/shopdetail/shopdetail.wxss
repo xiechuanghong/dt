@@ -1,0 +1,198 @@
+/* pages/shopDetail/shopDetail.wxss */
+
+page {
+  background: #f2f2f2;
+  height: 100%;
+  position: relative;
+}
+
+.goods-swiper {
+  background-color: #fff;
+}
+
+.ptn-re {
+  position: relative;
+}
+
+swiper-item image {
+  width: 100%;
+  height: 100%;
+}
+
+.page {
+  position: absolute;
+  bottom: 16rpx;
+  right: 16rpx;
+  padding: 4rpx 24rpx;
+  background: rgba(0, 0, 0, 0.30);
+  border-radius: 12px;
+  color: #fff;
+}
+
+.goods-title {
+  padding-top: 16rpx;
+  padding-left: 32rpx;
+  padding-bottom: 32rpx;
+  position: relative;
+}
+
+.goods-title .title {
+  font-family: PingFangSC-Medium;
+  font-size: 16px;
+  color: #041a27;
+  width: 562rpx;
+  display: inline-block;
+  margin-bottom: 18rpx;
+}
+
+.goods-title .price .i {
+  font-size: 13px;
+  color: #f4582c;
+  font-family: Helvetica-Bold;
+}
+
+.goods-title .price .num {
+  font-size: 21px;
+  color: #f4582c;
+  font-family: HelveticaNeue-Medium;
+  margin-right: 12rpx;
+}
+
+.goods-title .price .del {
+  font-size: 13px;
+  color: #aeaeae;
+  font-family: HelveticaNeue;
+  text-decoration: line-through;
+}
+
+.goods-title .mail {
+  width: 76rpx;
+  height: 32rpx;
+  border: 1px solid #6bba14;
+  border-radius: 16rpx;
+  font-size: 11px;
+  color: #6bba14;
+  text-align: center;
+  line-height: 32rpx;
+  margin-top: 16rpx;
+}
+
+.goods-title button {
+  position: absolute;
+  right: 0;
+  top: 16rpx;
+}
+
+.goods-title .share {
+  width: 124rpx;
+  height: 54rpx;
+  /* position: absolute;
+  right: 0;
+  top: 16rpx; */
+}
+
+.goods-detail {
+  margin-top: 16rpx;
+  background-color: #fff;
+}
+
+.goods-detail .title {
+  height: 98rpx;
+  padding-left: 56rpx;
+  position: relative;
+  font-family: PingFangSC-Medium;
+  font-size: 18px;
+  color: #060f38;
+  /* padding-top: 16rpx;
+  overflow: hidden; */
+}
+
+.goods-detail .title text {
+  margin-top: 16rpx;
+  display: inline-block;
+}
+
+.goods-detail .title::after {
+  content: '';
+  position: absolute;
+  width: 8rpx;
+  height: 40rpx;
+  background-color: #060f38;
+  top: 22rpx;
+  left: 32rpx;
+}
+
+.goods-detail .img-box {
+  width: 100%;
+  overflow: hidden;
+}
+
+.goods-detail .img-box image {
+  width: 100%;
+}
+
+/* 底部的盒子 */
+
+.btm-menu {
+  display: flex;
+  height: 112rpx;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  z-index: 100;
+}
+
+.btm-menu .btn-nav {
+  flex: 1;
+  background-color: #fff;
+  display: flex;
+  /* justify-content: space-around; */
+  align-items: center;
+  padding-left: 16rpx;
+}
+
+.btm-menu .btn-nav image {
+  width: 96rpx;
+  height: 96rpx;
+}
+
+.btm-menu .card-box {
+  position: relative;
+}
+
+.btm-menu .card-box .num {
+  position: absolute;
+  padding: 0 4rpx;
+  font-family: PingFangSC-Medium;
+  font-size: 11px;
+  color: #fff;
+  background: #f15050;
+  border-radius: 12rpx;
+  top: 0;
+  left: 60rpx;
+}
+
+.btm-menu .add-card {
+  width: 204rpx;
+  background-color: #060f38;
+  font-size: 14px;
+  font-family: PingFangSC-Medium;
+  color: #fff;
+  text-align: center;
+  line-height: 112rpx;
+}
+
+.btm-menu .fast-buy {
+  width: 208rpx;
+  background-color: #e76536;
+  font-size: 14px;
+  font-family: PingFangSC-Medium;
+  color: #fff;
+  text-align: center;
+  line-height: 112rpx;
+}
+
+.ptn {
+  background: #fff;
+  height: 112rpx;
+}

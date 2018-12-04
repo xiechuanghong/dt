@@ -1,0 +1,55 @@
+{
+  "pages": [
+    "pages/test1/test1",
+    "pages/test2/test2",
+    "pages/invite/invite",
+    "pages/poster/poster",
+    "pages/paysuccess/paysuccess",
+    "pages/radarring/radarring",
+    "pages/basicdata/basicdata",
+    "pages/home/home",
+    "pages/shopdetail/shopdetail",
+    "pages/personaldata/personaldata",
+    "pages/mycarddetail/mycarddetail",
+    "pages/Profit/Profit",
+    "pages/vipintr/vipintr",
+    "pages/pay/pay",
+    "pages/incomelist/incomelist",
+    "pages/incomedetail/incomedetail",
+    "pages/carddetail/carddetail",
+    "pages/index/index",
+    "pages/logs/logs"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarTitleText": "WeChat",
+    "navigationBarBackgroundColor": "#242837",
+    "navigationBarTextStyle": "white"
+  },
+  "tabBar": {
+    "color": "#7F8389",
+    "selectedColor": "#0084FF",
+    "borderStyle": "black",
+    "backgroundColor": "#fff",
+    "list": [
+      {
+        "selectedIconPath": "/img/tab/ic_tab_01_pre.png",
+        "iconPath": "/img/tab/ic_tab_01_nor.png",
+        "pagePath": "pages/radarring/radarring",
+        "text": "脉乐圈"
+      },
+      {
+        "selectedIconPath": "/img/tab/ic_tab_02_pre.png",
+        "iconPath": "/img/tab/ic_tab_02_nor.png",
+        "pagePath": "pages/Profit/Profit",
+        "text": "收益"
+      },
+      {
+        "selectedIconPath": "/img/tab/ic_tab_03_pre.png",
+        "iconPath": "/img/tab/ic_tab_03_nor.png",
+        "pagePath": "pages/home/home",
+        "text": "我的"
+      }
+    ]
+  }
+}

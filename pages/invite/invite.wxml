@@ -1,0 +1,15 @@
+<view class="cont">
+  <view class='list'>
+    <text>手机</text>
+    <text class='col'>{{phone}}</text>
+  </view>
+  <view class='list bg'>
+    <text class='col'>邀请码 （可为空）</text>
+  </view>
+  <view class='list'>
+    <input maxlength="6" placeholder="请输入邀请码" value='{{code || ""}}' bindinput="getCode"></input>
+    <image class='clone' src='/img/ic_closed_oval_gray_16.png'></image>
+  </view>
+  
+  <view class='btm-btn' bindtap='onNavigateTo'>完成</view>
+</view>

@@ -1,0 +1,79 @@
+page {
+  font-size: 16px;
+  font-family: PingFangSC-Regular;
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+image {
+  will-change: transform;
+}
+
+button {
+  background-color: #fff;
+  display: inline;
+  padding: 0;
+  line-height: 0;
+  margin: 0;
+  font-size: 14px;
+}
+
+button::after {
+  border: none;
+}
+
+button::before {
+  border: none;
+}
+
+.tab-ele {
+  display: flex;
+  padding: 16rpx 0;
+  justify-content: center;
+  background: #fff;
+}
+
+.tab-ele-item {
+  font-size: 14px;
+  color: #0084ff;
+  padding: 10rpx 32rpx;
+  border: 2rpx solid #0084ff;
+}
+
+.tab-ele-item.active {
+  background: #0084ff;
+  color: #fff;
+  transition: all 0.4s;
+}
+
+.tab-ele-item:first-child {
+  border-radius: 8rpx 0px 0px 8rpx;
+  border-right: none;
+}
+
+.tab-ele-item:last-child {
+  border-radius: 0rpx 8rpx 8rpx 0rpx;
+  border-left: none;
+}
+
+/* 没有更多了 */
+
+.period {
+  padding: 76rpx 80rpx;
+}
+
+.period image {
+  width: 100%;
+}
+
+image {
+  vertical-align: middle;
+}
+
+/* 没有数据的图片样式 */
+
+.not-data {
+  width: 218rpx;
+}

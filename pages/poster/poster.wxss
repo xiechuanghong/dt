@@ -1,0 +1,55 @@
+/* pages/poster/poster.wxss */
+
+.ptn-rel {
+  padding: 0 72rpx;
+  padding-top: 48rpx;
+}
+
+swiper {
+  width: 606rpx;
+  height: 904rpx;
+  box-shadow: 0 2px 8px 0 rgba(0, 0, 0, 0.12);
+  position: relative;
+}
+
+swiper image {
+  width: 0;
+  height: 0;
+  background: #fff;
+  box-shadow: 0 4rpx 16rpx 0 rgba(0, 0, 0, 0.12);
+  border-radius: 8rpx;
+  box-sizing: border-box;
+}
+
+.dots {
+  display: flex;
+  justify-content: center;
+  margin-top: 32rpx;
+  height: 16px;
+}
+
+.dots .item {
+  width: 16rpx;
+  height: 16rpx;
+  border-radius: 50%;
+  margin: 0 8rpx;
+  background: rgba(0, 0, 0, 0.30);
+}
+
+.dots .item.active {
+  background: #0084ff;
+}
+
+.auto {
+  padding: 0 40rpx;
+}
+
+button {
+  background: #0084ff;
+  border-radius: 47px;
+  color: #fff;
+  text-align: center;
+  display: block;
+  height: 94rpx;
+  line-height: 94rpx;
+}

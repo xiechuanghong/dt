@@ -1,0 +1,88 @@
+<view class="cont">
+  <form bindsubmit="formSubmit">
+    <view class='list'>
+      <view class='list-cont'>
+        <view class='flex' bindtap='uploadAvatar'>
+          <text>头像</text>
+          <image src='{{uploadAvatar.FileFullUrls[0] || cardDetail.Avatar}}'></image>
+          <input name="Avatar" value="{{uploadAvatar.FileUrls[0]}}" hidden='{{true}}'></input>
+        </view>
+        <image class='list-switch' src='/img/ic_list_arrow_right_gray.png'></image>
+      </view>
+    </view>
+    <view class='list'>
+      <view class='list-cont'>
+        <view class='flex'>
+          <text>性别</text>
+          <picker bindchange="bindPickerChangeSex" value="{{sexArr}}" range="{{sexArr}}">
+            <input value="{{sexArr[sex] || sexArr[cardDetail.Gender]}}" placeholder="请选择" name="Gender" disabled="{{true}}" />
+          </picker>
+        </view>
+        <image class='list-switch' src='/img/ic_list_arrow_right_gray.png'></image>
+      </view>
+    </view>
+    <view class='list'>
+      <view class='list-cont'>
+        <view class='flex'>
+          <text>生日</text>
+          <picker mode="date" value="{{date}}" end="2018-12-31" bindchange="bindDateChange">
+            <input value="{{date || cardDetail.Birthday}}" placeholder="请选择" name="Birthday" disabled="{{true}}" />
+          </picker>
+        </view>
+        <image class='list-switch' src='/img/ic_list_arrow_right_gray.png'></image>
+      </view>
+    </view>
+    <view class='list bg'>
+      <view class='list-cont'>
+        <text class='col'>姓名 (必填)</text>
+      </view>
+    </view>
+    <view class='list'>
+      <view class='list-cont'>
+        <input placeholder="请输入姓名(10字)" value="{{cardDetail.Name || ''}}" name="Name" maxlength="10"></input>
+        <image class='clone' src='/img/ic_closed_oval_gray_16.png' data-val='Name' bindtap='bindDelVal'></image>
+      </view>
+    </view>
+    <view class='list bg'>
+      <view class='list-cont'>
+        <text class='col'>职位</text>
+      </view>
+    </view>
+    <view class='list'>
+      <view class='list-cont'>
+        <input placeholder="请输入职位(10字)" name="Position" value="{{cardDetail.Position || ''}}" maxlength="10"></input>
+        <image class='clone' src='/img/ic_closed_oval_gray_16.png' data-val='Position' bindtap='bindDelVal'></image>
+      </view>
+    </view>
+    <view class='list bg'>
+      <view class='list-cont'>
+        <text class='col'>所属行业</text>
+      </view>
+    </view>
+    <view class='list'>
+      <view class='list-cont'>
+        <input placeholder="请输入所属行业(10字)" name="Industry" value="{{cardDetail.Industry || ''}}" maxlength="10"></input>
+        <image class='clone' src='/img/ic_closed_oval_gray_16.png' data-val='Industry' bindtap='bindDelVal'></image>
+      </view>
+    </view>
+    <view class='list bg'>
+      <view class='list-cont'>
+        <text class='col'>个性签名</text>
+      </view>
+    </view>
+    <view class='list'>
+      <view class='list-cont'>
+        <textarea cursor-spacing='64' name="Remark" bindinput="bindGetTextVal" value="{{cardDetail.Remark || ''}}" placeholder="请输入个性签名" maxlength="32"></textarea>
+        <view class='ptn-abs'>{{textSum}}</view>
+      </view>
+    </view>
+    <!-- <navigator url='/pages/personaldata/personaldata?PCardID={{cardDetail.PCardID}}' hover-class="none"> -->
+      <view class='zw'>
+        <button class='btm-btn' formType="submit">
+          <view class='btm-btn' bindtap='onNavCardDetail'>下一步</view>
+        </button>
+      </view>
+    <!-- </navigator> -->
+    <!-- <button formType="submit">查询</button> -->
+  </form>
+</view>

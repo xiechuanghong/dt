@@ -1,0 +1,50 @@
+<import src="/utils/wxParse/wxParse.wxml" />
+<block wx:if="{{productDetail}}">
+  <view class="goods-swiper">
+    <view class='ptn-re'>
+      <swiper style='height:{{height}}' bindchange="onSwiperChange">
+        <swiper-item wx:for="{{productDetail.Images}}" wx:key="">
+          <image src='{{item}}'></image>
+        </swiper-item>
+      </swiper>
+      <view class='page'>{{current}}/{{productDetail.Images.length}}</view>
+    </view>
+    <view class='goods-title'>
+      <text class='title'>{{productDetail.Name}}</text>
+      <view class='price'>
+        <text class='i'>￥</text>
+        <text class='num'>{{productDetail.Nowprice}}</text>
+        <text class='del'>{{productDetail.Originalprice}}</text>
+      </view>
+      <view class='mail'>免邮</view>
+
+      <button open-type='share' data-id="{{productDetail.ProductID}}" hover-class="none">
+        <image class='share' src='/img/img_goodsdetail_share_tips.png'></image>
+      </button>
+    </view>
+  </view>
+
+  <view class='goods-detail'>
+    <view class='title'>
+      <text>商品详情</text>
+    </view>
+    <view class='img-box'>
+      <template is="wxParse" data="{{wxParseData:content.nodes}}" />
+    </view>
+  </view>
+
+  <view class='ptn'></view>
+
+  <view class='btm-menu'>
+    <view class='btn-nav'>
+      <image bindtap='onNavigateToShop' src='/img/ic_gooddetail_store_line_black.png'></image>
+      <image src='/img/ic_gooddetail_myprofile_line_black.png'></image>
+      <view class='card-box'>
+        <image src='/img/ic_gooddetail_shopping_line_black.png'></image>
+        <view class='num'>12</view>
+      </view>
+    </view>
+    <view class='add-card'>加入购物车</view>
+    <view class='fast-buy'>立即购买</view>
+  </view>
+</block>

@@ -1,0 +1,751 @@
+/* pages/carddetail/carddetail.wxss */
+
+page {
+  height: 100%;
+  /* background: #f7f7fa; */
+  background: #f2f2f2;
+  position: relative;
+}
+
+.card {
+  padding: 0 32rpx;
+  padding-top: 104rpx;
+  background: #fff;
+}
+
+.card .card-info {
+  width: 100%;
+  height: 442rpx;
+  background: #fff;
+  box-shadow: 0 4rpx 32rpx 0 rgba(0, 0, 0, 0.12);
+  border-radius: 8rpx;
+  padding-left: 32rpx;
+  position: relative;
+  box-sizing: border-box;
+}
+
+.img-box {
+  position: absolute;
+  left: 32rpx;
+  top: -72rpx;
+}
+
+.img-box .avatar {
+  width: 144rpx;
+  height: 144rpx;
+  border-radius: 50%;
+}
+
+.img-box .grade {
+  width: 44rpx;
+  height: 44rpx;
+  position: absolute;
+  right: 0;
+  bottom: 0;
+}
+
+.edit {
+  position: absolute;
+  right: 32rpx;
+  top: 16rpx;
+  color: #007aff;
+  font-size: 12px;
+  display: flex;
+  align-items: center;
+}
+
+.edit image {
+  width: 40rpx;
+  height: 40rpx;
+  vertical-align: middle;
+  margin-right: 8rpx;
+}
+
+.edit.pad-right {
+  right: 64rpx;
+}
+
+.sex-or-address {
+  position: absolute;
+  left: 192rpx;
+  top: 16rpx;
+  font-size: 12px;
+  color: #fff;
+  display: flex;
+}
+
+.sex-or-address .address {
+  background: #868ba4;
+  padding: 4rpx 16rpx;
+  border-radius: 18rpx;
+}
+
+.sex-or-address .sex {
+  background: #f77f7f;
+  border-radius: 18rpx;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0 16rpx;
+  margin-right: 16rpx;
+}
+
+.sex-or-address .sex.active {
+  background: #59a8ff;
+}
+
+.sex-or-address .sex image {
+  width: 20rpx;
+  height: 20rpx;
+  margin-right: 8rpx;
+}
+
+.card-info .user-info {
+  padding-top: 88rpx;
+  font-size: 12px;
+  color: #8b9199;
+}
+
+.card-info .user-info .user-name {
+  font-family: PingFangSC-Medium;
+  font-size: 24px;
+  color: #2c364c;
+}
+
+.card-info .user-position .position {
+  font-size: 16px;
+  color: #060f38;
+}
+
+.card-info .user-position .dian {
+  width: 8rpx;
+  height: 8rpx;
+  display: inline-block;
+  border-radius: 50%;
+  vertical-align: middle;
+  background: #8b9199;
+  margin: 0 8rpx;
+}
+
+.card-info .user-position .active {
+  font-size: 12px;
+  color: #8b9199;
+  letter-spacing: 0;
+}
+
+.card-operating {
+  display: flex;
+  margin-top: 48rpx;
+}
+
+.card-operating .card-operating-button {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  vertical-align: middle;
+  margin-right: 100rpx;
+}
+
+.card-operating .card-operating-button image {
+  width: 88rpx;
+  height: 88rpx;
+}
+
+.card-operating .card-operating-button text {
+  font-size: 12px;
+  color: #060f38;
+}
+
+.card-bottom-container {
+  margin-top: 32rpx;
+  margin-left: 8rpx;
+}
+
+.card-bottom-container .card-bottom-img {
+  display: flex;
+  align-items: center;
+}
+
+.card-bottom-container image {
+  width: 48rpx;
+  height: 48rpx;
+  border-radius: 50%;
+}
+
+.card-bottom-container .card-popularity-more {
+  width: 26rpx;
+  height: 6rpx;
+  margin-left: 16rpx;
+}
+
+.card-bottom-visit-sum text {
+  font-size: 12px;
+  color: #8b9199;
+}
+
+/* -----------------------用户资料----------------------------- */
+
+.detail {
+  display: flex;
+  flex-direction: column;
+  background: #fff;
+  margin-top: 16rpx;
+  position: relative;
+}
+
+.detail-title {
+  display: flex;
+  flex-direction: row;
+}
+
+.detail-title-line {
+  width: 8rpx;
+  height: 40rpx;
+  background: #060f38;
+  margin-left: 32rpx;
+  margin-top: 22rpx;
+}
+
+.detail-title-text {
+  font-size: 36rpx;
+  font-family: PingFangSC-Medium;
+  color: #060f38;
+  margin-left: 32rpx;
+  margin-top: 16rpx;
+}
+
+.showinfo-container {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin-top: 16rpx;
+  padding-bottom: 16rpx;
+  margin-left: 48rpx;
+  margin-right: 48rpx;
+}
+
+.showinfo-container.active .showinfo-button {
+  opacity: 0.4;
+}
+
+.showinfo-icon {
+  width: 48rpx;
+  height: 48rpx;
+}
+
+.showinfo-label {
+  font-size: 28rpx;
+  font-family: PingFangSC-Regular;
+  color: #060f38;
+  margin-left: 8rpx;
+}
+
+.showinfo-content {
+  width: 60%;
+  display: flex;
+  flex-wrap: wrap;
+  font-size: 28rpx;
+  font-family: PingFangSC-Regular;
+  color: #8b9199;
+}
+
+.showinfo-button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 112rpx;
+  height: 64rpx;
+  border: solid #0084ff 2rpx;
+  border-radius: 8rpx;
+}
+
+.showinfo-button-text {
+  color: #0084ff;
+  font-family: PingFangSC-Regular;
+  font-size: 24rpx;
+}
+
+.showinfo-bottom-line {
+  /* width: 732rpx; */
+  margin-left: 48rpx;
+  margin-right: 48rpx;
+  height: 1rpx;
+  background: rgba(0, 0, 0, 0.06);
+}
+
+.detail-button-container {
+  display: flex;
+  justify-content: center;
+}
+
+.detail-button {
+  margin-top: 48rpx;
+  margin-bottom: 48rpx;
+  width: 484rpx;
+  height: 80rpx;
+  font-size: 28rpx;
+  color: #fff;
+  background: #0084ff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 40rpx;
+  border: none;
+}
+
+.bottom-logo {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background: #f2f2f2;
+}
+
+.bottom_signature {
+  width: 216rpx;
+  height: 90rpx;
+  margin-top: 32rpx;
+  margin-bottom: 46rpx;
+}
+
+.bottom-home {
+  height: 96rpx;
+  width: 100%;
+  background: #f7f7fa;
+  box-shadow: 0 0 0 0 rgba(0, 0, 0, 0.10);
+  font-size: 14px;
+  color: #2c364c;
+  text-align: center;
+  line-height: 96rpx;
+}
+
+/* ------------------------底部切换样式----------------------------- */
+
+.zw {
+  height: 90rpx;
+  width: 100%;
+  background: #f2f2f2;
+}
+
+.fixed-bottom {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  display: flex;
+  background: #f7f7fa;
+  /* padding: 4rpx 0; */
+}
+
+.fixed-bottom .tab-qh {
+  flex: 1;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  font-size: 10px;
+  color: #9ea1ad;
+}
+
+.fixed-bottom .tab-qh image {
+  width: 54rpx;
+  height: 54rpx;
+}
+
+.fixed-bottom .tab-qh.active {
+  font-size: 10px;
+  color: #0084ff;
+}
+
+/* -----------------------我的名片详情样式----------------------------- */
+
+.modal {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.60);
+  z-index: 10;
+  display: flex;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.modal-cont {
+  position: absolute;
+  top: 232rpx;
+  z-index: 11;
+  width: 548rpx;
+  background: #fff;
+  border-radius: 8rpx;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  overflow: hidden;
+  box-sizing: border-box;
+  height: 406rpx;
+}
+
+.success-img {
+  width: 84rpx;
+  margin-top: 44rpx;
+  margin-bottom: 4rpx;
+}
+
+.success-text {
+  font-family: PingFangSC-Medium;
+  font-size: 18px;
+  color: #2a2e3f;
+}
+
+.success-switch {
+  padding: 24rpx;
+  margin-top: 90rpx;
+  border-top: 2rpx solid rgba(0, 0, 0, 0.06);
+  display: flex;
+  justify-content: space-around;
+  width: 100%;
+  box-sizing: border-box;
+  align-items: center;
+}
+
+.success-switch .line {
+  position: relative;
+  width: 2rpx;
+  height: 60rpx;
+  background: rgba(0, 0, 0, 0.06);
+}
+
+.success-switch .switch {
+  font-size: 18px;
+  color: #2c364c;
+}
+
+.success-switch .switch.active {
+  font-family: PingFangSC-Medium;
+  font-size: 18px;
+  color: #007aff;
+}
+
+.modal-cont .clone {
+  width: 60rpx;
+  height: 60rpx;
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+
+.fixed-top {
+  font-size: 14px;
+  color: #2c364c;
+  height: 80rpx;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #fff2ce;
+}
+
+.fixed-top image {
+  width: 32rpx;
+  height: 32rpx;
+  margin-right: 16rpx;
+}
+
+/* -----------------------商城样式----------------------------- */
+
+.top-logo {
+  display: flex;
+  height: 112rpx;
+  align-items: center;
+  background-color: #fff;
+  padding-left: 32rpx;
+}
+
+.logo {
+  width: 80rpx;
+  height: 80rpx;
+}
+
+.top-text {
+  font-size: 16px;
+  margin-left: 16rpx;
+}
+
+.top-text image {
+  width: 132rpx;
+  height: 34rpx;
+}
+
+.ptn-fixed {
+  position: relative;
+  /* position: fixed; */
+  display: flex;
+  /* top: 112rpx; */
+  padding-left: 32rpx;
+  /* width: 100%; */
+  align-items: center;
+  border-bottom: 1rpx solid rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  background-color: #fff;
+}
+
+.ptn-fixed.fixednav {
+  position: fixed;
+  top: 0;
+  z-index: 1;
+  width: 100%;
+}
+
+.ptn-fixed .search {
+  display: flex;
+  position: relative;
+}
+
+.ptn-fixed .search input {
+  height: 64rpx;
+  background-color: #f3f4f6;
+  border-radius: 32rpx;
+  padding-left: 56rpx;
+  width: 270rpx;
+}
+
+.ptn-fixed .search image {
+  width: 32rpx;
+  height: 32rpx;
+  position: absolute;
+  top: 16rpx;
+  left: 16rpx;
+  margin: 0;
+}
+
+.ptn-fixed image {
+  width: 96rpx;
+  height: 96rpx;
+  margin-left: 16rpx;
+}
+
+.ptn-fixed .dis-flex {
+  display: flex;
+  position: relative;
+}
+
+.ptn-fixed .shop-cart-box {
+  margin-left: 32rpx;
+  position: relative;
+}
+
+.ptn-fixed .text {
+  position: absolute;
+  left: 108rpx;
+  top: 4rpx;
+  background: #f15050;
+  border-radius: 12rpx;
+  color: #fff;
+  padding: 0 4rpx;
+  font-family: PingFangSC-Medium;
+}
+
+.tab-h-nav {
+  position: fixed;
+  top: 96rpx;
+  z-index: 1;
+  width: 100%;
+}
+
+swiper scroll-view {
+  width: 100%;
+  height: 100%;
+}
+
+.item-box {
+  padding: 0 32rpx;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  padding-top: 32rpx;
+  overflow: hidden;
+  background-color: #f2f2f2;
+}
+
+.item-box.mgn-top {
+  margin-top: 194rpx;
+}
+
+.item-box .item {
+  width: 334rpx;
+  height: 520rpx;
+  background-color: #fff;
+  margin-bottom: 18rpx;
+  border-radius: 8rpx;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+.item-box .item .box-img {
+  width: 100%;
+  height: 334rpx;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #ebebeb;
+}
+
+.item-box .item .goods-img {
+  width: 100%;
+  height: 100%;
+  background-color: #ebebeb;
+}
+
+.item-box .item .goods-detail {
+  flex: 1;
+  padding: 16rpx;
+  word-wrap: break-word;
+}
+
+.item-box .goods-detail .depict {
+  font-family: PingFangSC-Regular;
+  display: inline-block;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  overflow: hidden;
+  color: #041a27;
+  font-size: 15px;
+  /* line-height: 82rpx; */
+  height: 84rpx;
+}
+
+.item-box .add-goods {
+  margin-top: 10rpx;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.item-box .add-goods .price {
+  font-family: HelveticaNeue-Medium;
+  font-size: 17px;
+  color: #f4582c;
+  /* line-height: 42rpx; */
+}
+
+.item-box .price text {
+  font-family: Helvetica-Bold;
+  font-size: 10px;
+  color: #f4582c;
+  margin-right: 8rpx;
+}
+
+.item-box .add-goods image {
+  width: 48rpx;
+  height: 48rpx;
+}
+
+/*  商城搜索样式  */
+
+.ptn-re {
+  position: relative;
+  height: 100%;
+  background-color: #fff;
+  padding-top: 20rpx;
+}
+
+.fl input {
+  background: #f3f4f6;
+  border-radius: 32px;
+  height: 64rpx;
+  padding-left: 72rpx;
+  flex: 1;
+}
+
+.fl text {
+  margin-left: 32rpx;
+}
+
+.fl {
+  display: flex;
+  padding: 0 32rpx;
+  align-items: center;
+  position: relative;
+  margin: 20rpx 0;
+}
+
+.fl .se {
+  width: 34rpx;
+  height: 34rpx;
+  position: absolute;
+  left: 62rpx;
+}
+
+.clear-top {
+  padding-top: 0;
+}
+
+.not-goods {
+  width: 250rpx;
+}
+
+/* tab切换样式 */
+
+.tab-h {
+  background-color: #fff;
+  box-sizing: border-box;
+  line-height: 96rpx;
+  padding-left: 16rpx;
+  display: flex;
+  align-items: center;
+}
+
+.tab-item {
+  color: #5f677a;
+  margin: 0 32rpx;
+  transition: all 0.25s;
+  border-bottom: 6rpx solid transparent;
+}
+
+.tab-item.active {
+  font-size: 16px;
+  color: #0084ff;
+  position: relative;
+  font-family: PingFangSC-Medium;
+  border-bottom: 6rpx solid #0084ff;
+  border-radius: 3rpx;
+}
+
+/* 数据列表加载没有更多了 */
+
+.period {
+  padding: 48rpx 0 64rpx;
+  text-align: center;
+  font-size: 12px;
+  color: #8b9199;
+  background-color: #f2f2f2;
+}
+
+.period-text {
+  position: relative;
+}
+
+.period-text::after {
+  content: '';
+  width: 204rpx;
+  height: 2rpx;
+  background: #ebebeb;
+  position: absolute;
+  left: 80rpx;
+  top: 16rpx;
+}
+
+.period-text::before {
+  content: '';
+  width: 204rpx;
+  height: 2rpx;
+  background: #ebebeb;
+  position: absolute;
+  right: 80rpx;
+  top: 16rpx;
+}
+
+button::after {
+  border: none;
+}

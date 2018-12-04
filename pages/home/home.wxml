@@ -1,0 +1,69 @@
+<view class="cont">
+  <view class='card'>
+    <view class='card-info {{State == "Success" ? "active":""}}'>
+      <view class='img-box'>
+        <image class='avatar' src='{{cardDetail.Avatar || userInfo.Avatar}}'></image>
+        <image class='grade' src='/img/ic_vip_avatar_22.png' wx:if="{{cardDetail.Type>0}}"></image>
+      </view>
+
+      <view class='sex-or-address' wx:if="{{State == 'Success'}}">
+        <view class='sex {{cardDetail.Gender == 1?"active":""}}'>
+          <image wx:if="{{cardDetail.Gender == 1}}" src='/img/ic_gender_male_white_10.png'></image>
+          <image wx:if="{{cardDetail.Gender == 2}}" src='/img/ic_gender_remale_white_10.png'></image>
+          <text>{{cardDetail.Gender == 0 ? '?':''}} {{cardDetail.Age || 18}}</text>
+        </view>
+        <view class='address'>{{cardDetail.City || '火星'}}</view>
+      </view>
+
+      <navigator url='/pages/basicdata/basicdata?PCardID={{cardDetail.PCardID}}' hover-class="none" wx:if="{{State == 'Success'}}">
+        <view class='edit'>
+          <image src='/img/ic_edit_oval_20.png'></image>
+          <text>编辑</text>
+        </view>
+      </navigator>
+
+      <view class='user-info' wx:if="{{State == 'Success'}}">
+        <view class='user-name'>{{cardDetail.Name||userInfo.NickName}}</view>
+        <view class='user-position'>
+          <text class='position'>{{cardDetail.Position || '无业游民'}}</text>
+          <text class='dian'></text>
+          <text class='active'>{{cardDetail.Industry || '其他'}}</text>
+        </view>
+        <view class='user-remark'>{{cardDetail.Remark || '这个人很懒，什么都没填写。'}}</view>
+        <view class='card-btn'>
+          <navigator url='/pages/mycarddetail/mycarddetail' hover-class="none">
+            <button nopen-type="getPhoneNumber" hover-class="none">查看我的名片</button>
+          </navigator>
+        </view>
+      </view>
+      <view class='user-info' wx:if="{{State != 'Success'}}">
+        <view class='user-name'>{{userInfo.NickName}}</view>
+        <view class='noth-card'>
+          <image style='width:168rpx;' mode='widthFix' src='/img/img_nodata_profile_business.png'></image>
+        </view>
+        <view class='card-btn'>
+          <button open-type="getPhoneNumber" bindgetphonenumber="getUserPhone" hover-class="none">立即创建我的名片</button>
+        </view>
+      </view>
+      <view class='card-operating' wx:if="{{State == 'Success'}}">
+        <view class='card-operating-button' bindtap='onCollection'>
+          <!-- <image src='/img/ic_home_like_nor.png'></image> -->
+          <image src="{{cardDetail.HadLike? '/img/ic_home_like_pre.png':'/img/ic_home_like_nor.png'}}"></image>
+          <text>靠谱 {{cardDetail.LikeCount == 0 ? '': cardDetail.LikeCount}}</text>
+        </view>
+        <view class='card-operating-button'>
+          <button open-type='share' hover-class='none' style='margin:0;' class='card-operating-button'>
+            <image src='/img/ic_home_sharebusinesscard.png'></image>
+          </button>
+          <text>转发名片</text>
+        </view>
+        <navigator url='/pages/poster/poster?PCardID={{cardDetail.PCardID}}' hover-class="none">
+          <view class='card-operating-button'>
+            <image src='/img/ic_home_generateposter.png'></image>
+            <text>生成海报</text>
+          </view>
+        </navigator>
+      </view>
+    </view>
+  </view>
+</view>

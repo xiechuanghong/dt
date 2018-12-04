@@ -1,0 +1,56 @@
+<!--pages/incomelist/incomelist.wxml-->
+<view class='cont'>
+
+  <view class='tab-ele'>
+    <view data-id="0" class='tab-ele-item {{currentId == 0 ? "active" : ""}}' bindtap='onTabSwitch'>总榜</view>
+    <view data-id="1" class='tab-ele-item {{currentId == 1 ? "active" : ""}}' bindtap='onTabSwitch'>周榜</view>
+    <view data-id="2" class='tab-ele-item {{currentId == 2 ? "active" : ""}}' bindtap='onTabSwitch'>月榜</view>
+  </view>
+
+  <view class='tab-content'>
+    <view class='my-income-list item'>
+      <view class='ranking'>{{myIncomeList.Rank}}</view>
+      <view class='user-info'>
+
+        <view class='user-name-avatar'>
+          <view class='user-avatar-box'>
+            <image class='avatar' src='{{myIncomeList.Avatar}}'></image>
+            <image class='grade' wx:if="{{myIncomeList.Type>0}}" src='/img/ic_vip_avatar_22.png'></image>
+          </view>
+          <text class='name'>{{myIncomeList.Name}}</text>
+        </view>
+        <text class='money'>￥ {{myIncomeList.Amount}}</text>
+
+      </view>
+      <view class='ranking-text'>排名</view>
+      <view class='income-text'>收入</view>
+    </view>
+
+    <view class='item' wx:for="{{incomeList.Data}}" wx:key="">
+      <view class='ranking'>
+        <image wx:if="{{index == 0}}" src='/img/img_ leaderboard_no1.png' mode='widthFix' style='width:58rpx'></image>
+        <image wx:if="{{index == 1}}" src='/img/img_ leaderboard_no2.png' mode='widthFix' style='width:58rpx'></image>
+        <image wx:if="{{index == 2}}" src='/img/img_ leaderboard_no3.png' mode='widthFix' style='width:58rpx'></image>
+        <text wx:if="{{index>2}}">{{index + 1}}</text>
+      </view>
+
+      <view class='user-info'>
+        <view class='user-name-avatar'>
+          <view class='user-avatar-box'>
+            <image class='avatar' src='{{item.Avatar}}'></image>
+            <image class='grade' wx:if="{{item.Type>0}}" src='/img/ic_vip_avatar_22.png'></image>
+          </view>
+          <text class='name'>{{item.Name}}</text>
+        </view>
+        <text class='money'>￥ {{item.Amount}}</text>
+      </view>
+
+    </view>
+    <!-- 没有更多了 -->
+    <view wx:if="{{!incomeList.Page.HasNextPage}}" class='period'>
+      <image mode='widthFix' src='/img/img_bottom_nomorenews.png'></image>
+    </view>
+
+  </view>
+
+</view>

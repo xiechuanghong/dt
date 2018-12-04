@@ -1,0 +1,93 @@
+page {
+  position: relative;
+  height: 100%;
+  width: 100%;
+  background: #f2f2f2;
+}
+
+.list {
+  padding: 16rpx 0;
+}
+
+.list-cont {
+  padding: 26rpx 32rpx;
+  background: #fff;
+  display: flex;
+  justify-content: space-between;
+  font-size: 16px;
+  align-items: center;
+  box-shadow: 0 0 0 0 rgba(0, 0, 0, 0.06);
+  position: relative;
+}
+
+.list-cont textarea {
+  height: 128rpx;
+  width: 100%;
+  font-size: 16px;
+}
+
+.list .flex {
+  flex: 1;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.list picker input {
+  text-align: right;
+  margin-right: 16rpx;
+}
+
+.list .flex image {
+  width: 112rpx;
+  height: 112rpx;
+  border-radius: 50%;
+  margin-right: 32rpx;
+}
+
+.list.bg .list-cont {
+  padding-top: 0;
+  padding-bottom: 0;
+  background: #f2f2f2;
+}
+
+.list-cont input {
+  flex: 1;
+  font-size: 14px;
+}
+
+.list-switch {
+  width: 32rpx;
+  height: 32rpx;
+}
+
+.list .clone {
+  width: 32rpx;
+  height: 32rpx;
+}
+
+.list .col {
+  font-size: 14px;
+  color: #8b9199;
+}
+
+.btm-btn {
+  padding: 22rpx 0;
+  background: #0084ff;
+  border-radius: 47px;
+  color: #fff;
+  text-align: center;
+  display: block;
+}
+
+.ptn-abs {
+  position: absolute;
+  bottom: 32rpx;
+  right: 32rpx;
+  font-size: 12px;
+  color: #8b9199;
+}
+
+.zw {
+  padding: 48rpx 40rpx;
+}

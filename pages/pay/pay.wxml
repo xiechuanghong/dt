@@ -1,0 +1,11 @@
+<view class="cont">
+
+  <view class='text'>支付金额</view>
+  <view class='sum'><text>￥</text>{{total_fee}}</view>
+  <view class='pay-mode'>
+    <image mode='widthFix' class='pay-type' src='/img/img_logo_wechatpay.png'></image>
+    <image mode='widthFix' class='state' src='/img/radio_selected.png'></image>
+  </view>
+  <view class='pay' bindtap='onPay'>确认支付</view>
+
+</view>

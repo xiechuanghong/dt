@@ -1,0 +1,17 @@
+<view class='ptn-rel'>
+  <swiper bindchange='onChangeSwiper' bindchange='onChangeSwiper'>
+    <swiper-item wx:for="{{Posters}}" wx:key="">
+      <image src='{{item}}' style='width:{{width}};height:{{height}}' bindload="imageLoad"></image>
+    </swiper-item>
+  </swiper>
+  <view class="dots">
+    <block wx:for="{{Posters}}" wx:key="">
+      <view class="item {{index == current?'active':''}}"></view>
+    </block>
+  </view>
+</view>
+<view class='auto'>
+
+  <button hover-class="none" bindtap='bindPoster'>保存海报</button>
+
+</view>

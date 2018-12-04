@@ -1,0 +1,56 @@
+/* pages/test2/test2.wxss */
+
+page {
+}
+
+.aaa {
+  width: 100px;
+  height: 100px;
+  background: red;
+  transition: all 0.4s;
+}
+
+.aaa.active {
+  background: blue;
+  width: 0;
+  height: 0;
+}
+
+.item {
+  /* transition: all 2s; *//* opacity: 0; */
+  animation: 2s changeColor;
+}
+
+@keyframes changeColor {
+  0% {
+    opacity: 0;
+    background: blue;
+  }
+
+  50% {
+    opacity: 1;
+    background: green;
+  }
+
+  100% {
+    opacity: 0;
+    background: red;
+  }
+}
+
+.example {
+  display: block;
+  width: 100%;
+  height: 100rpx;
+}
+
+.marquee_box {
+  width: 100%;
+  position: relative;
+}
+
+.marquee_text {
+  white-space: nowrap;
+  position: absolute;
+  top: 0;
+}

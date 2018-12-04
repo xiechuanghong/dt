@@ -1,0 +1,56 @@
+<view class='cont'>
+
+  <view class='my-code' wx:if="{{result.Code}}">
+    <view class='code-text'>
+      <image src='/img/ic_invitationcode_purple_24.png'></image>
+      <text>我的邀请码：</text>
+      <text class='code-col'>{{result.Code}}</text>
+    </view>
+    <view class='showinfo-button' bindtap='tapContentCopy' data-phone="{{result.Code}}">
+      <text class='showinfo-button-text'>复制</text>
+    </view>
+  </view>
+  <view class='profit-top'>
+    <view class='profit-sum'>{{profitInfo.Amount || 0}}</view>
+    <view class='profit-sum-text'>总余额 （元）</view>
+    <view class='profit-now'>
+      <view class=' profit-ele'>
+        <text class='profit-ele-num'>{{profitInfo.TodayTotalAmount || 0}}</text>
+        <text class='profit-ele-text'>今日赚(元)</text>
+      </view>
+      <view class='line'></view>
+      <view class='profit-ele'>
+        <text class='profit-ele-num'>{{profitInfo.TotalAmount || 0}}</text>
+        <text class='profit-ele-text'>已累计赚(元)</text>
+      </view>
+    </view>
+    <view class='profit-take'>提现</view>
+  </view>
+
+  <view class='mobel' style='{{!result.Type > 0 ? "display:block":""}}'>你还不是盟主，无权享受推广获利</view>
+
+  <view class='profit-button'>
+    <navigator url='/pages/vipintr/vipintr' hover-class="none">
+      <view class='profit-intr'>
+        <image mode='widthFix' src='/img/income_banner01.png'></image>
+      </view>
+    </navigator>
+    <view class='profit-type'>
+      <navigator url='/pages/incomedetail/incomedetail' hover-class="none">
+        <image mode='widthFix' src='/img/img_income_iande.png'></image>
+      </navigator>
+      <navigator url='/pages/incomelist/incomelist' hover-class="none">
+        <image mode='widthFix' src='/img/img_income_leaderboard.png'></image>
+      </navigator>
+      <button open-type='share' hover-class='none'>
+        <image mode='widthFix' src='/img/img_income_share.png'></image>
+      </button>
+    </view>
+  </view>
+
+  <view class='auto' wx:if="{{ !result.Type > 0 }}">
+    <button wx:if="{{vipInfoState === 'VipNoFound'}}" class='become-vip' open-type="getPhoneNumber" bindgetphonenumber="getUserPhone" hover-class="none">立即成为 盟主</button>
+    <button wx:if="{{vipInfoState === 'Success'}}" bindtap='onNavVip' class='become-vip'>立即成为 盟主</button>
+  </view>
+
+</view>

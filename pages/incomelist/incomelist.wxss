@@ -1,0 +1,102 @@
+page {
+  position: relative;
+  height: 100%;
+  width: 100%;
+  background: #f2f2f2;
+}
+
+.tab-content {
+  position: relative;
+}
+
+.tab-content .ranking {
+  font-size: 18px;
+  color: #b2b2b2;
+  /* margin-right: 40rpx; */
+  width: 120rpx;
+  text-align: center;
+  font-family: PingFangSC-Medium;
+}
+
+.tab-content .user-info .name {
+  font-size: 14px;
+  color: #060f38;
+  flex: 1;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.tab-content .user-info .money {
+  font-size: 14px;
+  color: #1890ff;
+}
+
+.tab-content .my-income-list {
+  margin-top: 34rpx;
+  margin-bottom: 16rpx;
+}
+
+.tab-content .item {
+  background: #fff;
+  display: flex;
+  padding: 16rpx 32rpx;
+  padding-left: 0;
+  align-items: center;
+  position: relative;
+  border-bottom: 2rpx solid rgba(0, 0, 0, 0.06);
+}
+
+.tab-content .item .user-info {
+  flex: 1;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  overflow: hidden;
+}
+
+.tab-content .item .ranking-text, .tab-content .item .income-text {
+  background: #ca9464;
+  border-radius: 24rpx;
+  color: #fff;
+  font-size: 12px;
+  padding: 0 16rpx;
+}
+
+.tab-content .item .ranking-text {
+  position: absolute;
+  top: -8rpx;
+  left: 20rpx;
+}
+
+.tab-content .item .income-text {
+  position: absolute;
+  top: -8rpx;
+  right: 32rpx;
+}
+
+.tab-content .user-name-avatar {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+}
+
+.tab-content .user-avatar-box {
+  position: relative;
+}
+
+.tab-content .user-avatar-box .avatar {
+  width: 80rpx;
+  height: 80rpx;
+  border-radius: 50%;
+  margin-right: 16rpx;
+}
+
+.tab-content .user-avatar-box .grade {
+  width: 22rpx;
+  height: 22rpx;
+  position: absolute;
+  bottom: 0;
+  right: 16rpx;
+}

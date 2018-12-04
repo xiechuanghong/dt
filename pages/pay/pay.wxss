@@ -1,0 +1,55 @@
+page {
+  position: relative;
+  height: 100%;
+  width: 100%;
+  background: #f2f2f2;
+}
+
+.text {
+  font-size: 15px;
+  color: #041a27;
+  text-align: center;
+  padding-top: 48rpx;
+  padding-bottom: 16rpx;
+}
+
+.sum {
+  font-family: HelveticaNeue-Medium;
+  font-size: 42px;
+  color: #ff4f00;
+  text-align: center;
+  margin-bottom: 64rpx;
+}
+
+.sum text {
+  font-family: Helvetica-Bold;
+  font-size: 20px;
+}
+
+.pay-mode {
+  display: flex;
+  align-items: center;
+  padding: 24rpx 32rpx;
+  background: #fff;
+  justify-content: space-between;
+}
+
+.pay-mode .pay-type {
+  width: 202rpx;
+}
+
+.pay-mode .state {
+  width: 80rpx;
+}
+
+.pay {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  padding: 40rpx 0;
+  color: #fff;
+  text-align: center;
+  font-family: PingFangSC-Medium;
+  font-size: 17px;
+  background: #feaa00;
+}

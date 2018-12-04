@@ -1,0 +1,2 @@
+<!--pages/paysuccess/paysuccess.wxml-->
+<text>{{text}}</text>

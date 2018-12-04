@@ -1,0 +1,10 @@
+/* pages/vipintr/vipintr.wxss */
+.cont image {
+  width: 100%;
+  display: flex;
+}
+
+.fixed {
+  position: fixed;
+  bottom: 0;
+}

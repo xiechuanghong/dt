@@ -1,0 +1,208 @@
+<view class="cont">
+  <!-- <navigator url='/pages/radarring/radarring' hover-class="none" wx:if="{{share}}"> -->
+  <view class='card-detail-top' wx:if="{{share}}" bindtap='onNavigateTo'>
+    <image src='/img/ic_nav_arrow_back_ black.png'></image>
+    <text>进入主页</text>
+  </view>
+
+  <view hidden="{{!isMyCard}}">
+    <view class='card'>
+      <view class='card-info'>
+        <view class='img-box'>
+          <image class='avatar' src='{{cardDetail.Avatar}}' hidden="{{!cardDetail.Avatar}}"></image>
+          <image class='grade' wx:if="{{cardDetail.Type>0}}" src='/img/ic_vip_avatar_22.png'></image>
+        </view>
+        <view class='sex-or-address'>
+          <view class='sex {{cardDetail.Gender == 1?"active":""}}'>
+            <image wx:if="{{cardDetail.Gender == 1}}" src='/img/ic_gender_male_white_10.png'></image>
+            <image wx:if="{{cardDetail.Gender == 2}}" src='/img/ic_gender_remale_white_10.png'></image>
+            <text>{{cardDetail.Gender == 0 ? '?':''}} {{cardDetail.Age || 18}}</text>
+          </view>
+          <view class='address'>{{cardDetail.City || '火星'}}</view>
+        </view>
+        <view class='user-info'>
+          <view class='user-name'>{{cardDetail.Name || '帝推科技'}}</view>
+          <view class='user-position'>
+            <text class='position'>{{cardDetail.Position || '无也游民'}}</text>
+            <text class='dian'></text>
+            <text class='active'>{{cardDetail.Industry || '其他'}}</text>
+          </view>
+          <view class='user-remark'>{{cardDetail.Remark || '这个人很懒，什么都没填写。'}}</view>
+        </view>
+        <view class='card-operating'>
+          <view class='card-operating-button' bindtap='onCollection'>
+            <!-- <image src='/img/ic_home_like_nor.png'></image>
+            <text>靠谱</text> -->
+            <image src="{{cardDetail.HadLike? '/img/ic_home_like_pre.png':'/img/ic_home_like_nor.png'}}"></image>
+            <text>靠谱 {{cardDetail.LikeCount == 0 ? '': cardDetail.LikeCount}}</text>
+          </view>
+          <view class='card-operating-button'>
+            <button open-type='share' hover-class='none' style='margin:0;' class='card-operating-button'>
+              <image src='/img/ic_home_sharebusinesscard.png'></image>
+            </button>
+            <text>转发名片</text>
+          </view>
+          <navigator url='/pages/poster/poster?PCardID={{cardDetail.PCardID}}' hover-class="none">
+            <view class='card-operating-button'>
+              <image src='/img/ic_home_generateposter.png'></image>
+              <text>生成海报</text>
+            </view>
+          </navigator>
+        </view>
+      </view>
+      <view class='card-bottom-container'>
+        <view class='card-bottom-img'>
+          <image wx:for="{{cardDetail.Viewers}}" wx:key="" src='{{item}}'></image>
+          <image wx:if="{{cardDetail.Viewers.length >= 6}}" class='card-popularity-more' src='/img/img_more_gray_m.png'></image>
+        </view>
+        <view class='card-bottom-visit-sum'>
+          <text>{{cardDetail.Viewers.length}} 人来访</text>
+        </view>
+      </view>
+
+    </view>
+    <view class='detail'>
+      <view class='detail-title'>
+        <!-- <view class='detail-title-line'></view> -->
+        <text class='detail-title-text'>个人信息</text>
+      </view>
+      <view class='showinfo-container'>
+        <image class='showinfo-icon' src='../../img/ic_phone_line_black_m.png'></image>
+        <text class='showinfo-label'>手机： </text>
+        <text class='showinfo-content'>{{cardDetail.Mobile}}</text>
+        <view style='flex: 1'></view>
+        <view class='showinfo-button' bindtap='tapPhoneCall' data-phoneID="80" data-phone="{{cardDetail.Mobile}}">
+          <text class='showinfo-button-text' bindtap=''>呼叫</text>
+        </view>
+      </view>
+      <view class='showinfo-bottom-line'></view>
+      <view class='showinfo-container {{cardDetail.Email? "" : "active"}}'>
+        <image class='showinfo-icon' src='../../img/ic_email_line_black_m.png'></image>
+        <text class='showinfo-label'>邮箱： </text>
+        <text class='showinfo-content'>{{cardDetail.Email || '未设置'}}</text>
+        <view style='flex: 1'></view>
+        <view class='showinfo-button' data-id="1" bindtap='onContentCopyEmail' data-copy='{{cardDetail.Email}}'>
+          <text class='showinfo-button-text'>复制</text>
+        </view>
+      </view>
+      <view class='showinfo-bottom-line'></view>
+      <view class='showinfo-container {{cardDetail.WeChatCode?"":"active"}}'>
+        <image class='showinfo-icon' src='../../img/ic_wechat_line_black_m.png'></image>
+        <text class='showinfo-label'>微信： </text>
+        <text class='showinfo-content'>{{cardDetail.WeChatCode || '未设置'}}</text>
+        <!-- <button class='showinfo-button'>添加</button> -->
+        <view style='flex: 1'></view>
+        <view class='showinfo-button' data-copy="{{cardDetail.WeChatCode}}" bindtap='onContentCopyWeChat'>
+          <text class='showinfo-button-text'>复制</text>
+        </view>
+      </view>
+      <view class='showinfo-bottom-line'></view>
+      <view class='showinfo-container {{cardDetail.Phone?"":"active"}}'>
+        <image class='showinfo-icon' src='../../img/ic_telephone_line_black_m.png'></image>
+        <text class='showinfo-label'>座机： </text>
+        <text class='showinfo-content'>{{cardDetail.Phone || '未设置'}}</text>
+        <view style='flex: 1'></view>
+        <view class='showinfo-button' bindtap='tapPhoneCall' data-phone="{{cardDetail.Phone}}">
+          <text class='showinfo-button-text'>呼叫</text>
+        </view>
+      </view>
+      <view class='showinfo-bottom-line'></view>
+      <view class='showinfo-container {{cardDetail.EnterpriseName?"":"active"}}'>
+        <image class='showinfo-icon' src='../../img/ic_company_line_black_m.png'></image>
+        <text class='showinfo-label'>公司： </text>
+        <text class='showinfo-content'>{{cardDetail.EnterpriseName || '未设置'}}</text>
+        <view style='flex: 1'></view>
+        <view class='showinfo-button' data-id="2" bindtap='onContentCopyFirmName' data-copy='{{cardDetail.EnterpriseName}}'>
+          <text class='showinfo-button-text'>复制</text>
+        </view>
+      </view>
+      <view class='showinfo-bottom-line'></view>
+      <view class='showinfo-container {{cardDetail.FullAddress?"":"active"}}'>
+        <image class='showinfo-icon' src='../../img/ic_location_line_black_m.png'></image>
+        <text class='showinfo-label'>地址： </text>
+        <text class='showinfo-content'>{{cardDetail.FullAddress || '未设置'}}</text>
+        <view style='flex: 1'></view>
+        <view class='showinfo-button' bindtap='tapMapNavigation' data-copy="{{cardDetail.FullAddress}}" data-address='{{cardDetail.FullAddress}}'>
+          <text class='showinfo-button-text'>复制</text>
+        </view>
+      </view>
+      <view class='showinfo-bottom-line'></view>
+      <view class='detail-button-container'>
+        <button class='detail-button' bindtap='tapAddPhoneContact'>存入手机通讯录</button>
+      </view>
+      <!-- <view class='showinfo-bottom-line'></view> -->
+    </view>
+    <view class='bottom-logo'>
+      <image class='bottom_signature' src='/img/img_bottom_signature.png'></image>
+    </view>
+
+  </view>
+
+  <view hidden="{{isMyCard}}">
+    <view class='ptn-fixed {{fixednav?"fixednav":""}}'>
+      <view class="search" bindtap='choice'>
+        <input placeholder="搜索" disabled="disabled" />
+        <image src='/img/ic_search_gray_m.png'></image>
+      </view>
+      <view class='dis-flex'>
+        <view class='shop-cart-box'>
+          <image src='/img/ic_store_shoppingcar_orange_m.png'></image>
+        </view>
+        <view class='text'>12</view>
+        <image src='/img/ic_store_profile_cyan_m.png'></image>
+        <image src='/img/ic_store_share_blue_m.png'></image>
+      </view>
+
+    </view>
+
+    <view class="tab-h {{fixednav?'tab-h-nav':''}}">
+      <view wx:for="{{productKindsList}}" wx:key="" class="tab-item {{currentTab==index?'active':''}}" data-id="{{item.KindID}}" data-current="{{index}}" bindtap="swichNav">{{item.Name}}</view>
+    </view>
+
+    <block wx:if="{{productsList.length==0}}">
+      <view class='' style='text-align:center;margin-top:160rpx;'>
+        <image mode='widthFix' class='not-goods' src='/img/img_placeholder_nodata_store.png'></image>
+      </view>
+    </block>
+
+    <block wx:if="{{productsList.length>0}}">
+      <view class="item-box {{fixednav?'mgn-top':''}}">
+        <view class='item' wx:for="{{productsList}}" data-id="{{item.ProductID}}" wx:key="" bindtap='goodsDetail'>
+          <view class='box-img'>
+            <image wx:if="{{item.Image}}" class='goods-img' src='{{item.Image}}'></image>
+            <image wx:else class='goods-img' style='width:96rpx;height:70rpx;' src='/img/img_placeholder_normal.png'></image>
+          </view>
+          <view class='goods-detail'>
+            <text class='depict'>{{item.Name}}</text>
+            <view class='add-goods'>
+              <view class='price'>
+                <text>￥</text>{{item.Price}}
+              </view>
+              <image src='/img/ic_addshoppingcar_yellow_s.png'></image>
+            </view>
+          </view>
+        </view>
+      </view>
+
+      <!-- 没有更多了~ -->
+      <view wx:if="{{!isPeriod}}" class='period'>
+        <view class='period-text'>没有更多了</view>
+      </view>
+
+    </block>
+
+  </view>
+  <view class='zw'></view>
+  <view class='fixed-bottom'>
+    <view class='tab-qh {{isMyCard?"active":""}}' data-id="1" bindtap='onTabSwitch'>
+      <image wx:if="{{isMyCard}}" src='/img/tab/ic_tab_00_pre.png'></image>
+      <image wx:if="{{!isMyCard}}" src='/img/tab/ic_tab_00_nor.png'></image>
+      <text>名片</text>
+    </view>
+    <view class='tab-qh {{!isMyCard?"active":""}}' data-id="2" bindtap='onTabSwitch'>
+      <image wx:if="{{isMyCard}}" src='/img/tab/ic_tab_01_nor1 (1).png'></image>
+      <image wx:if="{{!isMyCard}}" src='/img/tab/ic_tab_01_nor1 (2)2.png'></image>
+      <text>商城</text>
+    </view>
+  </view>
+</view>

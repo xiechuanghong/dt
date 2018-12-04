@@ -1,0 +1,86 @@
+<view class="cont">
+  <form bindsubmit="formSubmit">
+    <view class='list'>
+      <view class='list-cont'>
+        <text>手机</text>
+        <text class='col'>{{cardDetail.Mobile}}</text>
+      </view>
+    </view>
+    <view class='list bg'>
+      <view class='list-cont'>
+        <text class='col'>邮箱</text>
+      </view>
+    </view>
+    <view class='list'>
+      <view class='list-cont'>
+        <input placeholder="请输入邮箱" value="{{cardDetail.Email || ''}}" name="Email" ></input>
+        <image class='clone' src='/img/ic_closed_oval_gray_16.png' data-val='Email' bindtap='bindDelVal'></image>
+      </view>
+    </view>
+    <view class='list bg'>
+      <view class='list-cont'>
+        <text class='col'>微信</text>
+      </view>
+    </view>
+    <view class='list'>
+      <view class='list-cont'>
+        <input placeholder="请输入微信号" value="{{cardDetail.WeChatCode || ''}}" name="WeChatCode" maxlength="20"></input>
+        <image class='clone' src='/img/ic_closed_oval_gray_16.png' data-val='WeChatCode' bindtap='bindDelVal'></image>
+      </view>
+    </view>
+    <view class='list bg'>
+      <view class='list-cont'>
+        <text class='col'>座机</text>
+      </view>
+    </view>
+    <view class='list'>
+      <view class='list-cont'>
+        <input placeholder="请输入座机号" value="{{cardDetail.Phone || ''}}" name="Phone" maxlength="16"></input>
+        <image class='clone' src='/img/ic_closed_oval_gray_16.png' data-val='Phone' bindtap='bindDelVal'></image>
+      </view>
+    </view>
+    <view class='list bg'>
+      <view class='list-cont'>
+        <text class='col'>公司名</text>
+      </view>
+    </view>
+    <view class='list'>
+      <view class='list-cont'>
+        <input placeholder="请输入公司名" value="{{cardDetail.EnterpriseName || ''}}" name="EnterpriseName" maxlength="28"></input>
+        <image class='clone' src='/img/ic_closed_oval_gray_16.png' data-val='EnterpriseName' bindtap='bindDelVal'></image>
+      </view>
+    </view>
+    <view class='list bg'>
+      <view class='list-cont'>
+        <text class='col'>地区</text>
+      </view>
+    </view>
+    <view class='list'>
+      <view class='list-cont'>
+        <view class='flex'>
+          <text>地区</text>
+          <picker mode="region" bindchange="bindRegionChange" value="{{region}}">
+            <input value="{{region}}" placeholder="请选择" name="regionArr" disabled="{{true}}" />
+          </picker>
+        </view>
+        <image class='list-switch' src='/img/ic_list_arrow_right_gray.png'></image>
+      </view>
+    </view>
+    <view class='list bg'>
+      <view class='list-cont'>
+        <text class='col'>详细地址</text>
+      </view>
+    </view>
+    <view class='list'>
+      <view class='list-cont'>
+        <input placeholder="请输入详细地址" name="Address" value="{{cardDetail.Address || ''}}" maxlength="28" ></input>
+        <image class='clone' src='/img/ic_closed_oval_gray_16.png' data-val='Address' bindtap='bindDelVal'></image>
+      </view>
+    </view>
+    <view class='zw'>
+      <button class='btm-btn' formType="submit">
+        <view class='btm-btn'>完成</view>
+      </button>
+    </view>
+  </form>
+</view>

@@ -1,0 +1,74 @@
+<view class='cont-radar' hidden="{{!isRadar}}">
+  <view class='online-sum'>
+    <text class='text'>在线客源</text>
+    <text class='sum'>{{totalSum}}</text>
+  </view>
+  <view class='radar-box'>
+    <view class='radar'>
+      <navigator url='/pages/carddetail/carddetail?PCardID={{item.PCardID}}' hover-class="none" wx:for="{{testArr}}" wx:key="">
+        <view hidden="{{item.hidden}}" class='radar-item' style='left:{{item.positionX}}px; top:{{item.positionY}}px'>
+          <image src='{{item.Avatar}}'></image>
+        </view>
+      </navigator>
+      <view style='left:{{testX}}px;top:{{testY}}px' class='test-position'></view>
+
+    </view>
+  </view>
+  <view class='btm-title'>
+    <image src='/img/logo.png'></image>
+    <text class='text'>陈独秀</text>
+    <text class='sum'>赚了9999.5元</text>
+  </view>
+  <view class='nav-icon'>
+    <image bindtap='onSwitch' style='margin-bottom:32rpx;' src='/img/img_list_cicle_white_40_nor.png'></image>
+    <button open-type='share' hover-class='none'>
+      <image src='/img/img_share_cicle_white_40_nor.png'></image>
+    </button>
+  </view>
+</view>
+
+<view class='cont-list' hidden="{{isRadar}}">
+  <block wx:if="{{radarList.Data.length>0}}">
+
+    <navigator url='/pages/carddetail/carddetail?PCardID={{item.PCardID}}' hover-class="none" wx:for="{{radarList.Data}}" wx:key="">
+      <view class='item'>
+        <view class='user-box'>
+          <view class='user-img-box'>
+            <image class='avatar' src='{{item.Avatar}}'></image>
+            <image wx:if="{{item.Type>0}}" class='grade' src='/img/ic_vip_avatar_22.png'></image>
+          </view>
+          <view class='user-info'>
+            <view class='user-name'>{{item.Name || '无名'}}</view>
+            <view class='user-position'>{{item.Position || '无业游民'}}</view>
+          </view>
+        </view>
+        <view class='sex-or-address'>
+          <view class='sex {{item.Gender == 1?"active":""}}'>
+            <image wx:if="{{item.Gender == 1}}" src='/img/ic_gender_male_white_10.png'></image>
+            <image wx:if="{{item.Gender == 2}}" src='/img/ic_gender_remale_white_10.png'></image>
+            <text>{{item.Gender == 0 ? '?':''}} {{item.Age || 18}}</text>
+          </view>
+          <view class='address'>{{item.City || '火星'}}</view>
+        </view>
+        <view class='industry'>{{item.Industry || '其他'}}</view>
+      </view>
+    </navigator>
+
+    <!-- 没有更多了~ -->
+    <view wx:if="{{!radarList.Page.HasNextPage}}" class='period'>
+      <image mode='widthFix' src='/img/img_bottom_nomorenews.png'></image>
+    </view>
+
+  </block>
+  <block wx:if="{{radarList.Data.length==0}}">
+    <view class='' style='text-align:center;padding-top:160rpx;'>
+      <image mode='widthFix' class='not-data' src='/img/img_placeholder_nodata.png'></image>
+    </view>
+  </block>
+  <view class='nav-icon'>
+    <image bindtap='onSwitch' style='margin-bottom:32rpx;' src='/img/img_radar_cicle_black_40_nor.png'></image>
+    <button open-type='share' hover-class='none'>
+      <image src='/img/img_share_cicle_black_40_nor.png'></image>
+    </button>
+  </view>
+</view>
